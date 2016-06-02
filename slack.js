@@ -71,10 +71,7 @@ function getSlackUserName(parsedBody, success)
     return (
         (success ? 'Published:': 'Failed:') +
         ' ' +
-        (parsedBody.siteName || 'unknown') +
-        ' (' +
-        (parsedBody.id || '') +
-        ')'
+        (parsedBody.siteName || 'unknown')
     );
 }
 
@@ -83,8 +80,6 @@ function getSlackText(parsedBody)
     return (
         'Initiated by: ' +
         (parsedBody.author || 'unknown') +
-        ' ' +
-        (parsedBody.endTime || '') +
         '\r\n```' +
         (parsedBody.message || 'null message') +
         '```'
